@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login Page</title>
+</head>
+<body>
+<h2>
+<%
+		String val =(String)request.getAttribute("msg");
+		if(val!=null)
+			out.print(val);
+%>
+</h2>
+<form method="post" action="login">
+ 	<table>
+			<tr>
+			<div>
+				<td><label>User Name:</label></td>
+				<td><input type="text" name="uname" placeholder="Enter User Id" required/></td>
+			</div>
+		</tr>
+		
+		<tr>
+			<div>
+				<td><label>Password:</label></td>
+				<td><input type="password" name="pwd" placeholder="Enter your Password" required/></td>
+			</div>
+		</tr>
+			</tr>
+		
+		<tr>
+			<td><input type="submit" value="Login"></td>
+		</tr>
+</table>
+<a href="#" >Are you new User? Register</a>
+</form>
+</body>
+</html> 
+:wq!
+:wq!
+
