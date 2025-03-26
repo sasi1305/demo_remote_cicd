@@ -3,12 +3,12 @@ on:
 push:
 branches: [ "main" ]
 env:
-BUCKET_NAME: "mydemobuckforcicd35" # Change bucket name
+BUCKET_NAME: "mydemobuckforcicd35"
 AWS_REGION: " us-west-1"
-# permission can be added at job level or workflow level
+
 permissions:
-id-token: write  # This is required for requesting the JWT
-contents: read   # This is required for actions/checkout
+id-token: write  
+contents: read  
 jobs:
 S3PackageUpload:
 runs-on: ubuntu-latest
@@ -20,7 +20,7 @@ uses: aws-actions/configure-aws-credentials@v1
 with:
 role-to-assume:arn:aws:iam::229724524769:role/gitnewrolefordemo
 aws-region: ${{env.AWS_REGION }}
-# Upload a file to AWS s3
+
 - name: Copy index.html to s3
 run: |
 aws s3 cp ./index.html s3://${{ env.BUCKET_NAME }}/ --acl public-read
