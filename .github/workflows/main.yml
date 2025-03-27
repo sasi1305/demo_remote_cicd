@@ -19,7 +19,7 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::229724524709:role/gitnewrolefordemo
+          role-to-assume: arn:aws:iam::229724524769:role/gitnewrolefordemo
           aws-region: ${{ env.AWS_REGION }}
       - name: Copy index.html to s3
         run: |
