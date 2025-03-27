@@ -16,11 +16,11 @@ jobs:
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v4
-      - name: Configure AWS credentials
+      - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: arn:aws:iam::229724524709:role/gitnewrolefordemo
           aws-region: ${{ env.AWS_REGION }}
-      - name: Copy index.html to S3
+      - name: Copy index.html to s3
         run: |
           aws s3 cp ./index.html s3://${{ env.BUCKET_NAME }}/ --acl public-read
