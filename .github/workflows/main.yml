@@ -6,7 +6,6 @@ on:
 env:
   BUCKET_NAME: "mydemobuckforcicd35"
   AWS_REGION: "us-west-1"
-
 permissions:
   id-token: write
   contents: read
